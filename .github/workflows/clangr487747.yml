@@ -83,7 +83,10 @@ jobs:
       if: env.ENABLE_KERNELSU == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
+        git clone https://github.com/rsuntk/KernelSU.git
+        cd KernelSU
+        git fetch --depth 1 origin e3217e29160b875448a4082a504a76d689e01702
+        git checkout FETCH_HEAD
       
 
     - name: Setup Configuration for Kernel
