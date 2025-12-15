@@ -58,8 +58,9 @@ jobs:
     - name: Download clang-r487747
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
+        wget -O clang.tar.gz https://github.com/tomxi1997/build-aosp-clang-for-arm64/releases/download/v14/clang-r487747.tar.xz
         mkdir clang-aosp
-        git clone https://github.com/tomxi1997/build-aosp-clang-for-arm64/releases/download/v14/clang-r487747.tar.xz clang-aosp --depth=1
+        tar -C clang-aosp/ -zxvf clang.tar.gz
           
         
 
